@@ -8,6 +8,8 @@
   <link rel="stylesheet" type="text/css" href="./stylesheets/attribution.css">
   <link rel="stylesheet" type="text/css" href="./stylesheets/general.css">
   <link rel="stylesheet" type="text/css" href="./stylesheets/hero.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/registration.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/utility.css">
   <title>Frontend Mentor | Intro component with sign up form</title>
 </head>
 <body>
@@ -15,20 +17,26 @@
     <header class="hero">
       <h1 class="hero__header">Learn to code by watching others</h1>
 
-      <p class="hero__description">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-        but understanding how developers think is invaluable. </p>
+      <p class="hero__description">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable. </p>
     </header>
     <section class="registration">
-      <p class="registration__promo">Try it free 7 days then $20/mo. thereafter</p>
-
-      <form method="POST" action="#" novalidate class="registration__form">
-        <input type="text" placeholder="First Name" class="registration__input">
-        <input type="text" placeholder="Last Name" class="registration__input">
-        <input type="email" placeholder="Email Address" class="registration__input">
-        <input type="password" placeholder="Password" class="registration__input">
+      <div class="registration__promo">
+        <p class="registration__promo-text"><span class="u-text-weight-medium">Try it free 7 days</span> then $20/mo. thereafter</p>
+      </div>
+      
+      <form method="POST" action="#" novalidate class="registration__form" aria-labelledby="registrationFormTitle">
+        <h2 id="registrationFormTitle" class="u-sr-only">Registration Form</h2>
+        <label for="firstName" class="u-sr-only">First Name</label>
+        <input type="text" name="firstName" placeholder="First Name" id="firstName" class="registration__input">
+        <label for="lastName" class="u-sr-only">Last Name</label>
+        <input type="text" name="lastName" placeholder="Last Name" id="lastName" class="registration__input">
+        <label for="emailAddress" class="u-sr-only">Email Address</label>
+        <input type="email" name="emailAddress" placeholder="Email Address" id="emailAddress" class="registration__input">
+        <label for="password" class="u-sr-only">Password</label>
+        <input type="password" name="password" placeholder="Password" id="password" class="registration__input">
       
         <button type="submit" class="registration__submit-button">Claim your free trial</button>
-        <p class="registration__terms">By clicking the button, you are agreeing to our Terms and Services</p>
+        <p class="registration__terms">By clicking the button, you are agreeing to our <span class="u-text-color-primary-dark u-text-weight-bold">Terms and Services</span></p>
       </form>
     </section>
   </main>

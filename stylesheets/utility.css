@@ -1,0 +1,25 @@
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.u-text-color-primary-dark {
+  color: var(--color-primary-dark);
+}
+
+.u-text-weight-light {
+  font-weight: 500;
+}
+
+.u-text-weight-medium {
+  font-weight: 600;
+}
+
+.u-text-weight-bold {
+  font-weight: 700;
+}
