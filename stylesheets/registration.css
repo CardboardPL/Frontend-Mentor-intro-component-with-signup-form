@@ -1,0 +1,109 @@
+.registration {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.registration__promo {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  height: 88px;
+  border-radius: 9px;
+  box-shadow: var(--shadow-main);
+  margin-bottom: 24px;
+}
+
+.registration__promo-text {
+  max-width: 60%;
+  line-height: 1.8;
+  letter-spacing: 0.28px;
+  opacity: 0.95;
+  margin-top: 2px;
+}
+
+.registration__form {
+  background-color: white;
+  padding: 24px 24px 23px 24px;
+  box-shadow: var(--shadow-main);
+  border-radius: 8px;
+}
+
+.registration__input {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: var(--color-neutral-dark);
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  height: 56px;
+  padding: 13px 18px;
+  border: 1px solid rgb(222, 222, 222);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+.registration__input::placeholder {
+  color: var(--color-neutral-dark);
+  opacity: 0.8;
+}
+
+.registration__input:focus {
+  border: 1px solid var(--color-accent);
+}
+
+.registration__submit-button {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--color-primary-light);
+  color: white;
+  height: 56px;
+  width: 100%;
+  padding-top: 5px;
+  margin-bottom: 9px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 4px solid;
+  border-left: 1px solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.registration__submit-button:hover {
+  opacity: 0.75;
+}
+
+.registration__terms {
+  font-size: 11px;
+  color: var(--color-neutral-light);
+  line-height: 1.9;
+  letter-spacing: 0.0232558139534884px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 950px) {
+  .registration__promo {
+    height: 60px;
+  }
+
+  .registration__form {
+    padding: 40px 40px 42.1px 40px;
+  }
+
+  .registration__input {
+    margin-bottom: 20px;
+  }
+
+  .registration__submit-button {
+    margin-bottom: 11px;
+  }
+}
