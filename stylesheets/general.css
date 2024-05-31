@@ -11,6 +11,9 @@
   /* Neutral */
   --color-neutral-dark: hsl(249, 10%, 26%);
   --color-neutral-light: hsl(246, 25%, 77%);
+
+  /* Shadow values */
+  --shadow-main: 0 8px 0 hsla(249, 10%, 26%, 0.2)
 }
 
 *, *::before, *::after {
@@ -36,18 +39,35 @@ body {
   justify-content: flex-start;
   background-color: var(--color-primary-dark);
   background-image: url("../images/bg-intro-mobile.png");
-  background-position: center;
+  background-position: top;
   background-repeat: repeat-y;
   min-height: 100vh;
 }
 
 main {
   padding: 0 24px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  height: 100%;
 }
 
 @media (min-width: 376px) {
   body {
     background-image: url("../images/bg-intro-desktop.png");
+  }
+}
+
+@media (min-width: 950px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 11.45833333333333%;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  main > * {
+    flex: 1;
   }
 }
