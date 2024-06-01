@@ -13,7 +13,7 @@
   --color-neutral-light: hsl(246, 25%, 77%);
 
   /* Shadow values */
-  --shadow-main: 0 8px 0 hsla(249, 10%, 26%, 0.2)
+  --shadow-main: 0 0.5rem 0 hsla(249, 10%, 26%, 0.2)
 }
 
 *, *::before, *::after {
@@ -45,8 +45,8 @@ body {
 }
 
 main {
-  padding: 0 24px;
-  margin-bottom: 50px;
+  padding: 0 1.5rem;
+  margin-bottom: 3.125rem;
   height: 100%;
 }
 

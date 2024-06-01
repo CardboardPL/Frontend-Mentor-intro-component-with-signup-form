@@ -1,49 +1,49 @@
 .registration {
-  max-width: 540px;
+  max-width: 33.75rem;
   margin: 0 auto;
 }
 
 .registration__promo {
-  font-size: 15px;
+  font-size: 0.9375rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-accent);
-  height: 88px;
-  border-radius: 9px;
+  height: 5.5rem;
+  border-radius: 0.5625rem;
   box-shadow: var(--shadow-main);
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .registration__promo-text {
   max-width: 60%;
   line-height: 1.8;
-  letter-spacing: 0.28px;
+  letter-spacing: 0.0175rem;
   opacity: 0.95;
-  margin-top: 2px;
+  margin-top: 0.125rem;
 }
 
 .registration__form {
   background-color: white;
-  padding: 24px 24px 23px 24px;
+  padding: 1.5rem 1.5rem 1.4375rem 1.5rem;
   box-shadow: var(--shadow-main);
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .registration__input {
   font-family: inherit;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.001875rem;
   color: var(--color-neutral-dark);
   display: block;
   width: 100%;
   background-color: transparent;
-  height: 56px;
-  padding: 13px 18px;
-  border: 1px solid rgb(222, 222, 222);
-  border-radius: 6px;
-  margin-bottom: 16px;
+  height: 3.5rem;
+  padding: 0.8125rem 1.125rem;
+  border: 0.0625rem solid rgb(222, 222, 222);
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
   outline: none;
 }
 
@@ -53,26 +53,26 @@
 }
 
 .registration__input:focus {
-  border: 1px solid var(--color-accent);
+  border: 0.0625rem solid var(--color-accent);
 }
 
 .registration__submit-button {
   font-family: inherit;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   text-transform: uppercase;
   background-color: var(--color-primary-light);
   color: white;
-  height: 56px;
+  height: 3.5rem;
   width: 100%;
-  padding-top: 5px;
-  margin-bottom: 9px;
-  border-top: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 4px solid;
-  border-left: 1px solid;
+  padding-top: 0.3125rem;
+  margin-bottom: 0.5625rem;
+  border-top: 0.0625rem solid;
+  border-right: 0.0625rem solid;
+  border-bottom: 0.25rem solid;
+  border-left: 0.0625rem solid;
   border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
+  border-radius: 0.375rem;
   cursor: pointer;
   transition: opacity 0.15s ease-in-out;
 }
@@ -82,28 +82,28 @@
 }
 
 .registration__terms {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--color-neutral-light);
   line-height: 1.9;
-  letter-spacing: 0.0232558139534884px;
+  letter-spacing: 0.001453488372093rem;
   max-width: 90%;
   margin: 0 auto;
 }
 
 @media (min-width: 950px) {
   .registration__promo {
-    height: 60px;
+    height: 3.75rem;
   }
 
   .registration__form {
-    padding: 40px 40px 42.1px 40px;
+    padding: 2.5rem 2.5rem 2.63125rem 2.5rem;
   }
 
   .registration__input {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   .registration__submit-button {
-    margin-bottom: 11px;
+    margin-bottom: 0.6875rem;
   }
 }

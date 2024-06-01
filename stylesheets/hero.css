@@ -1,38 +1,38 @@
 .hero {
-  padding: 91px 0 62px 0;
+  padding: 5.6875rem 0 3.875rem 0;
 }
 
 .hero__header {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.3;
-  letter-spacing: 0.05px;
-  margin-bottom: 22px;
+  letter-spacing: 0.003125rem;
+  margin-bottom: 1.375rem;
 }
 
 .hero__description {
   line-height: 1.625;
-  letter-spacing: 0.08px;
+  letter-spacing: 0.005rem;
   opacity: 0.8;
 }
 
 @media (min-width: 950px) {
   .hero {
-    padding-top: 69px;
+    padding-top: 4.3125rem;
     text-align: left;
   }
 
   .hero__header {
-    font-size: 50px;
+    font-size: 3.125rem;
     line-height: 1.1;
-    letter-spacing: -0.55px;
+    letter-spacing: -0.034375rem;
   }
 
   .hero__header {
-    margin-bottom: 28.5px;
+    margin-bottom: 1.78125rem;
   }
 
   .hero__description {
-    letter-spacing: 0.05px;
+    letter-spacing: 0.003125rem;
   }
 }
