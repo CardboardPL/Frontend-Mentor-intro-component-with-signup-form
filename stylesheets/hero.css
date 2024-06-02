@@ -18,7 +18,9 @@
 
 @media (min-width: 950px) {
   .hero {
+    max-width: 35.625rem;
     padding-top: 4.3125rem;
+    margin: 0 auto;
     text-align: left;
   }
 
