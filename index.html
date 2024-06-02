@@ -31,14 +31,26 @@
       
       <form method="POST" action="#" novalidate class="registration__form" aria-labelledby="registrationFormTitle">
         <h2 id="registrationFormTitle" class="u-sr-only">Registration Form</h2>
+
         <label for="firstName" class="u-sr-only">First Name</label>
-        <input type="text" name="firstName" placeholder="First Name" id="firstName" class="registration__input" required>
+        <div class="registration__input-wrapper">
+          <input type="text" name="firstName" placeholder="First Name" id="firstName" class="registration__input" required>
+        </div>
+
         <label for="lastName" class="u-sr-only">Last Name</label>
-        <input type="text" name="lastName" placeholder="Last Name" id="lastName" class="registration__input" required>
+        <div class="registration__input-wrapper">
+          <input type="text" name="lastName" placeholder="Last Name" id="lastName" class="registration__input" required>
+        </div>
+
         <label for="emailAddress" class="u-sr-only">Email Address</label>
-        <input type="email" name="emailAddress" placeholder="Email Address" id="emailAddress" class="registration__input" required>
+        <div class="registration__input-wrapper">
+          <input type="email" name="emailAddress" placeholder="Email Address" id="emailAddress" class="registration__input" required>
+        </div>
+        
         <label for="password" class="u-sr-only">Password</label>
-        <input type="password" name="password" placeholder="Password" id="password" class="registration__input" required>
+        <div class="registration__input-wrapper">
+          <input type="password" name="password" placeholder="Password" id="password" class="registration__input" required>
+        </div>
       
         <button type="submit" class="registration__submit-button">Claim your free trial</button>
         <p class="registration__terms">By clicking the button, you are agreeing to our <span class="u-text-color-primary-dark u-text-weight-bold">Terms and Services</span></p>

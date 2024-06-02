@@ -30,6 +30,19 @@
   border-radius: 0.5rem;
 }
 
+.registration__input-wrapper {
+  position: relative;
+}
+
+.registration__input-wrapper--invalid::before {
+  position: absolute;
+  top: 50%;
+  right: 0.9798387096774194rem;
+  transform: translateY(-50%);
+  margin-top: 0.1875rem;
+  content: url(../images/icon-error.svg);
+}
+
 .registration__input {
   font-family: inherit;
   font-size: 0.875rem;
@@ -40,11 +53,16 @@
   width: 100%;
   background-color: transparent;
   height: 3.5rem;
-  padding: 0.8125rem 1.125rem;
-  border: 0.0625rem solid rgb(222, 222, 222);
+  padding: 0.8125rem 2.875rem 0.8125rem 1.125rem;
+  border: 0.0625rem solid hsl(0, 0%, 87%);
   border-radius: 0.375rem;
   margin-bottom: 1rem;
   outline: none;
+  transition: border 0.15s ease-in-out;
+}
+
+.registration__input:focus:not(.registration__input--invalid) {
+  border: 0.0625rem solid var(--color-accent);
 }
 
 .registration__input::placeholder {
@@ -52,8 +70,14 @@
   opacity: 0.8;
 }
 
-.registration__input:focus {
-  border: 0.0625rem solid var(--color-accent);
+.registration__input--invalid {
+  color: var(--color-primary-dark);
+  padding-left: 1.0625rem;
+  border: 0.1250rem solid var(--color-primary-dark);
+}
+
+.registration__input--invalid::placeholder {
+  opacity: 0;
 }
 
 .registration__submit-button {
@@ -71,7 +95,7 @@
   border-right: 0.0625rem solid;
   border-bottom: 0.25rem solid;
   border-left: 0.0625rem solid;
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: hsla(0, 0%, 0%, 0.1);
   border-radius: 0.375rem;
   cursor: pointer;
   transition: opacity 0.15s ease-in-out;
@@ -90,17 +114,38 @@
   margin: 0 auto;
 }
 
-@media (min-width: 950px) {
+@media (min-width: 450px) {
   .registration__promo {
     height: 3.75rem;
   }
 
+  .registration__promo-text {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 950px) {
+  .registration {
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width: 1100px) {
   .registration__form {
     padding: 2.5rem 2.5rem 2.63125rem 2.5rem;
   }
 
   .registration__input {
+    padding: 0.8125rem 3.75rem 0.8125rem 1.9375rem;
     margin-bottom: 1.25rem;
+  }
+
+  .registration__input--invalid {
+    padding-left: 1.875rem;
+  }
+
+  .registration__input-wrapper--invalid::before {
+    right: 1.6875rem;
   }
 
   .registration__submit-button {
