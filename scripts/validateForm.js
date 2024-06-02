@@ -23,12 +23,36 @@ function validatePassword(password) {
   return pattern.test(password.trim());
 }
 
-function addInvalidStyle(element) {
-  element.classList.add('registration__input--invalid')
+function validateInput(input) {
+  console.log('run')
+  const inputType = input.getAttribute('type');
+  let isValidInput;
+
+  switch (inputType) {
+    case 'email':
+      isValidInput = validateEmail(input.value);
+      !isValidInput ? addInvalidState(input) : removeInvalidState(input);
+      break;
+    case 'password':
+      isValidInput = validatePassword(input.value);
+      !isValidInput ? addInvalidState(input) : removeInvalidState(input);
+      break;
+    default:
+      isValidInput = validateName(input.value);
+      !isValidInput ? addInvalidState(input) : removeInvalidState(input);
+  }
+
+  return isValidInput;
 }
 
-function removeInvalidStyle(element) {
-  element.classList.remove('registration__input--invalid')
+function addInvalidState(element) {
+  element.classList.add('registration__input--invalid');
+  element.parentElement.classList.add('registration__input-wrapper--invalid');
+}
+
+function removeInvalidState(element) {
+  element.classList.remove('registration__input--invalid');
+  element.parentElement.classList.remove('registration__input-wrapper--invalid');
 }
 
 registrationForm.addEventListener('submit', (e) => {
@@ -37,29 +61,11 @@ registrationForm.addEventListener('submit', (e) => {
   let isValid = [];
 
   registrationFormInputs.forEach(input => {
-    const inputType = input.getAttribute('type');
-    let isValidInput;
-
-    switch (inputType) {
-      case 'email':
-        isValidInput = validateEmail(input.value);
-        !isValidInput ? addInvalidStyle(input) : removeInvalidStyle(input);
-        isValid.push(isValidInput);
-        break;
-      case 'password':
-        isValidInput = validatePassword(input.value);
-        !isValidInput ? addInvalidStyle(input) : removeInvalidStyle(input);
-        isValid.push(isValidInput);
-        break;
-      default:
-        isValidInput = validateName(input.value);
-        !isValidInput ? addInvalidStyle(input) : removeInvalidStyle(input);
-        isValid.push(isValidInput);
-    }
+    isValid.push(validateInput(input));
   })
 
   if (isValid.includes(false)) {
     return;
   }
   registrationForm.reset();
-}) 
+});
