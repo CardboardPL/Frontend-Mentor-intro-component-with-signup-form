@@ -8,6 +8,10 @@ const registrationFormInputs = [
   document.querySelector('.registration__input[name="password"]')
 ]
 
+function getInputType(input) {
+  return input.getAttribute('type');
+}
+
 function validateName(name) {
   const pattern = /^[A-Za-zÀ-ÖØ-öø-ÿ ']{1,50}$/
   return pattern.test(name.trim());
@@ -23,25 +27,36 @@ function validatePassword(password) {
   return pattern.test(password.trim());
 }
 
-function validateInput(input) {
-  console.log('run')
-  const inputType = input.getAttribute('type');
+function validateInput(inputType, value) {
   let isValidInput;
 
   switch (inputType) {
     case 'email':
-      isValidInput = validateEmail(input.value);
-      !isValidInput ? addInvalidState(input) : removeInvalidState(input);
+      isValidInput = validateEmail(value);
+      
       break;
     case 'password':
-      isValidInput = validatePassword(input.value);
-      !isValidInput ? addInvalidState(input) : removeInvalidState(input);
+      isValidInput = validatePassword(value);
       break;
     default:
-      isValidInput = validateName(input.value);
-      !isValidInput ? addInvalidState(input) : removeInvalidState(input);
+      isValidInput = validateName(value);
   }
 
+  return isValidInput;
+}
+
+function styleInputState(input, isValidInput) {
+  isValidInput ? removeInvalidState(input) : addInvalidState(input) 
+}
+
+function manageInputState(input, isValidInput) {
+  styleInputState(input, isValidInput)
+}
+
+function validateInputHandler(input) {
+  const inputType = getInputType(input);
+  const isValidInput = validateInput(inputType, input.value);
+  manageInputState(input, isValidInput)
   return isValidInput;
 }
 
@@ -61,7 +76,7 @@ registrationForm.addEventListener('submit', (e) => {
   let isValid = [];
 
   registrationFormInputs.forEach(input => {
-    isValid.push(validateInput(input));
+    isValid.push(validateInputHandler(input));
   })
 
   if (isValid.includes(false)) {
@@ -69,3 +84,9 @@ registrationForm.addEventListener('submit', (e) => {
   }
   registrationForm.reset();
 });
+
+registrationFormInputs.forEach(input => {
+  input.addEventListener('input', () => {
+    validateInputHandler(input);
+  })
+})
