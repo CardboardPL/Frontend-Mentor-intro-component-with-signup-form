@@ -73,7 +73,7 @@
 .registration__input--invalid {
   color: var(--color-primary-dark);
   padding-left: 1.0625rem;
-  border: 0.1250rem solid var(--color-primary-dark);
+  border: 0.125rem solid var(--color-primary-dark);
 }
 
 .registration__input--invalid::placeholder {
@@ -114,6 +114,21 @@
   margin: 0 auto;
 }
 
+.registration__error-message {
+  position: absolute;
+  right: 0;
+  bottom: -18px;
+  color: var(--color-primary-dark);
+  font-size: 11px;
+  font-style: italic;
+  text-align: right;
+  text-wrap: nowrap;
+}
+
+.registration__error-message[aria-hidden='true'] {
+  display: none;
+}
+
 @media (min-width: 450px) {
   .registration__promo {
     height: 3.75rem;
@@ -142,6 +157,7 @@
 
   .registration__input--invalid {
     padding-left: 1.875rem;
+    margin-bottom: 5.25vh;
   }
 
   .registration__input-wrapper--invalid::before {
