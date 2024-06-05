@@ -74,6 +74,7 @@
   color: var(--color-primary-dark);
   padding-left: 1.0625rem;
   border: 0.125rem solid var(--color-primary-dark);
+  margin-bottom: 2.125rem;
 }
 
 .registration__input--invalid::placeholder {
@@ -117,12 +118,13 @@
 .registration__error-message {
   position: absolute;
   right: 0;
-  bottom: -18px;
-  color: var(--color-primary-dark);
-  font-size: 11px;
+  bottom: -1.375rem;
+  font-size: 0.6875rem;
   font-style: italic;
+  letter-spacing: -0.0024038461538462rem;
   text-align: right;
-  text-wrap: nowrap;
+  white-space: nowrap;
+  color: var(--color-primary-dark);
 }
 
 .registration__error-message[aria-hidden='true'] {
@@ -157,7 +159,7 @@
 
   .registration__input--invalid {
     padding-left: 1.875rem;
-    margin-bottom: 5.25vh;
+    margin-bottom: 2.625rem;
   }
 
   .registration__input-wrapper--invalid::before {
@@ -166,5 +168,11 @@
 
   .registration__submit-button {
     margin-bottom: 0.6875rem;
+  }
+}
+
+@media (max-height: 650px) {
+  .registration__input--invalid {
+    margin-bottom: 1.875rem;
   }
 }

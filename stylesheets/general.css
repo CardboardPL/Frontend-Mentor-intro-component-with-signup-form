@@ -4,19 +4,21 @@
   /* Primary */
   --color-primary-dark: hsl(0, 100%, 74%);
   --color-primary-light: hsl(154, 59%, 51%);
-  
+
   /* Accent */
   --color-accent: hsl(248, 32%, 49%);
-  
+
   /* Neutral */
   --color-neutral-dark: hsl(249, 10%, 26%);
   --color-neutral-light: hsl(246, 25%, 77%);
 
   /* Shadow values */
-  --shadow-main: 0 0.5rem 0 hsla(249, 10%, 26%, 0.2)
+  --shadow-main: 0 0.5rem 0 hsla(249, 10%, 26%, 0.2);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -27,7 +29,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: white;
@@ -38,7 +40,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   background-color: var(--color-primary-dark);
-  background-image: url("../images/bg-intro-mobile.png");
+  background-image: url('../images/bg-intro-mobile.png');
   background-position: top;
   background-repeat: repeat-y;
   min-height: 100vh;
@@ -48,11 +50,12 @@ main {
   padding: 0 1.5rem;
   margin-bottom: 3.125rem;
   height: 100%;
+  width: 100%;
 }
 
 @media (min-width: 376px) {
   body {
-    background-image: url("../images/bg-intro-desktop.png");
+    background-image: url('../images/bg-intro-desktop.png');
   }
 }
 
