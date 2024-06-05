@@ -7,11 +7,21 @@ const registrationFormInputs = [
   document.querySelector('.registration__input[name="emailAddress"]'),
   document.querySelector('.registration__input[name="password"]'),
 ];
+const errorMessages = {
+  blankInput: 'cannot be empty',
+  email: 'Looks like this is not an email',
+  password: 'Looks like this is not a valid password',
+};
 
 // Helper functions
-
 function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function formatFieldName(input) {
+  const inputName = input.name.split(/(?=[A-Z])/);
+  inputName[0] = capitalizeFirstLetter(inputName[0]);
+  return inputName.join(' ');
 }
 
 function getParentElement(element) {
@@ -24,7 +34,7 @@ function getInputType(input) {
 
 function validateName(name) {
   const pattern = /^[A-Za-zÀ-ÖØ-öø-ÿ ']{1,50}$/;
-  return pattern.test(name.trim());
+  return pattern.test(name);
 }
 
 // Validation functions
@@ -37,7 +47,7 @@ function validateEmail(email) {
 function validatePassword(password) {
   const pattern =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+[\]{}|;:,.<>?]).{8,20}$/;
-  return pattern.test(password.trim());
+  return pattern.test(password);
 }
 
 function validateInput(inputType, value) {
@@ -46,7 +56,6 @@ function validateInput(inputType, value) {
   switch (inputType) {
     case 'email':
       isValidInput = validateEmail(value);
-
       break;
     case 'password':
       isValidInput = validatePassword(value);
@@ -60,18 +69,9 @@ function validateInput(inputType, value) {
 
 // State management functions
 function determineErrorMessage(inputType, input) {
-  const inputName = input.name.split(/(?=[A-Z])/);
-  inputName[0] = capitalizeFirstLetter(inputName[0]);
-  const formattedName = inputName.join(' ');
+  const formattedName = formatFieldName(input);
 
-  const errorMessages = {
-    blankInput: 'cannot be empty',
-    email: 'Looks like this is not an email',
-    password: 'Looks like this is not a valid password',
-  };
-  const isEmpty = input.value.trim().length === 0;
-
-  if (isEmpty) {
+  if (input.value.trim().length === 0) {
     return `${formattedName} ${errorMessages.blankInput}`;
   }
 
@@ -119,7 +119,7 @@ function manageInputState(input, inputType, isValidInput) {
 // Handler function
 function validateInputHandler(input) {
   const inputType = getInputType(input);
-  const isValidInput = validateInput(inputType, input.value);
+  const isValidInput = validateInput(inputType, input.value.trim());
   manageInputState(input, inputType, isValidInput);
   return isValidInput;
 }
